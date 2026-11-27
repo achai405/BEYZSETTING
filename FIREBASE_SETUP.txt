@@ -1,0 +1,52 @@
+BEYZ STORE — SETUP FIREBASE (WAJIB UNTUK ADMIN LOGIN & DATABASE)
+
+PENTING
+- GitHub Pages hanya host fail website. Firebase menyediakan login dan database.
+- Jangan masukkan password, service account JSON atau private key ke dalam GitHub.
+- firebase-config.js hanya mengandungi konfigurasi web app Firebase (API key web bukan password admin). Keselamatan data dibuat melalui Firestore Rules.
+
+A. CIPTA PROJECT FIREBASE
+1. Buka https://console.firebase.google.com/ dan cipta project, contoh: beyz-store.
+2. Dalam Project Overview, tambah Web App (ikon </>) dan salin Firebase config.
+3. Buka Authentication > Get started > Sign-in method > aktifkan Email/Password.
+4. Authentication > Users > Add user. Cipta email dan password owner.
+5. Buka Firestore Database > Create database. Mulakan production mode.
+6. Buka Project settings > General > Your apps > SDK setup and configuration.
+7. Salin apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId ke firebase-config.js (gantikan placeholder).
+
+B. TETAPKAN OWNER PERTAMA
+1. Selepas create user owner dalam Authentication, salin UID pengguna itu.
+2. Buka Firestore Database > Data > Start collection.
+3. Collection ID: admins
+4. Document ID: PASTE_UID_OWNER
+5. Field: role (string) = owner
+6. Field: email (string) = email owner.
+7. Simpan. Owner kini boleh login ke #admin.
+
+C. FIRESTORE SECURITY RULES
+1. Firestore Database > Rules.
+2. Gantikan rules dengan kandungan fail firestore.rules dalam ZIP ini.
+3. Tekan Publish.
+
+D. ADMIN TAMBAHAN
+1. Admin mesti didaftarkan sebagai user melalui Firebase Authentication (email/password).
+2. Salin UID admin itu.
+3. Owner login ke BEYZ > Admin Dashboard > tab Admin.
+4. Tampal UID dan tekan Berikan akses Admin.
+5. Admin boleh urus produk/pesanan, tetapi tidak boleh mengurus senarai admin.
+
+E. UPLOAD KE GITHUB
+1. Gantikan index.html, style.css, app.js di repository dengan fail dalam ZIP.
+2. Tambah firebase-config.js dan firestore.rules (rules boleh disimpan sebagai fail rujukan; publish rules melalui Firebase Console).
+3. Pastikan index.html, style.css, app.js dan firebase-config.js berada di root repository.
+4. Commit changes. GitHub Pages akan deploy semula.
+5. Buka https://USERNAME.github.io/REPOSITORY/#admin untuk login.
+
+NOTA FUNGSI V1
+- Admin login menggunakan Firebase Authentication dan peranan Firestore admins/{uid}.
+- Owner sahaja boleh beri/buang akses Admin.
+- Produk, tetapan website, pembayaran, redeem dan status pesanan menggunakan Firestore.
+- Penghantaran barang masih manual: Owner/Admin ubah status pesanan kepada Paid/Delivered dan hubungi pembeli.
+- QR pembayaran diisi sebagai URL gambar HTTPS. Jangan letak QR sebenar sehingga anda bersedia untuk paparkannya kepada umum.
+- Proof URL ialah pautan resit, bukan upload fail. Upload resit sebenar melalui Firebase Storage boleh ditambah dalam fasa seterusnya.
+- Untuk operasi kedai sebenar, tambah pengesahan redeem yang terikat kepada identiti/order dan perlindungan spam/rate limit melalui backend/Cloud Functions sebelum dilancarkan secara umum.

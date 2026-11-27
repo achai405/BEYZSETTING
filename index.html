@@ -1,89 +1,37 @@
 <!doctype html>
 <html lang="ms">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <title>BEYZ STORE</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020"><title>BEYZ STORE</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#"><span class="brand-mark">B</span><span>BEYZ</span><span class="verified" title="Verified">✓</span></a>
-    <button class="icon-btn" id="menuBtn" aria-label="Buka menu">☰</button>
-  </header>
-
-  <nav class="drawer" id="drawer">
-    <button class="drawer-close" id="closeMenu">×</button>
-    <a href="#home">Home</a><a href="#catalog">Catalog</a><a href="#redeem">Redeem Code</a>
-    <a href="#leaderboard">Leaderboard</a><a href="#support">Support</a>
-    <a href="#owner">Owner &amp; Founder</a><a href="#admin">Admin Login</a>
-    <a href="#settings">Website Settings</a>
-  </nav>
-  <div class="scrim" id="scrim"></div>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <span class="eyebrow">WELCOME TO BEYZ</span>
-        <h1>Your trusted<br><em>digital store.</em></h1>
-        <p>Explore produk pilihan, pilih pakej dan buat pesanan dengan mudah.</p>
-        <a class="primary-btn" href="#catalog">Lihat katalog <span>→</span></a>
-      </div>
-      <div class="hero-art" aria-label="Banner BEYZ">
-        <div class="orb orb-one"></div><div class="orb orb-two"></div>
-        <div class="hero-b">B</div><span class="float-tag">BEYZ STORE</span>
-      </div>
-    </section>
-
-    <section class="section" id="catalog">
-      <div class="section-heading"><div><span class="eyebrow">PILIHAN UNTUK ANDA</span><h2>Our Catalog</h2></div><span class="muted small">Produk pilihan</span></div>
-      <div class="catalog-grid" id="catalogGrid"></div>
-    </section>
-
-    <section class="redeem-panel section" id="redeem">
-      <div><span class="eyebrow">HADIAH EKSKLUSIF</span><h2>Have a redeem code?</h2><p>Masukkan kod yang diberikan oleh owner.</p></div>
-      <form id="redeemForm" class="redeem-form"><input id="redeemCode" placeholder="Masukkan redeem code" autocomplete="off"><button class="primary-btn">Redeem</button></form>
-      <p class="form-note" id="redeemNote">Sistem redeem akan diaktifkan selepas database disambungkan.</p>
-    </section>
-
-    <section class="section" id="leaderboard">
-      <div class="section-heading"><div><span class="eyebrow">KOMUNITI BEYZ</span><h2>Top Supporters</h2></div></div>
-      <div class="leaderboard"><div class="leader-row"><span class="rank">01</span><span class="avatar">B</span><span class="leader-name">Belum ada pembeli</span><span class="muted small">—</span></div></div>
-    </section>
-
-    <section class="support section" id="support">
-      <div><span class="eyebrow">KAMI SEDIA MEMBANTU</span><h2>Need help?</h2><p>Hubungi owner jika ada pertanyaan tentang produk atau pesanan.</p></div>
-      <div class="support-links"><a href="#" class="secondary-btn" id="waLink">WhatsApp ↗</a><a href="#" class="secondary-btn" id="tgLink">Telegram ↗</a></div>
-    </section>
-
-    <section class="section small-info" id="owner"><span class="eyebrow">BEHIND BEYZ</span><h2>Owner &amp; Founder</h2><p>Founder: <strong>Belum ditetapkan</strong><br>Owner: <strong>Belum ditetapkan</strong><br>Admin: <strong>Belum ditetapkan</strong></p></section>
-    <section class="section small-info" id="admin"><span class="eyebrow">PRIVATE AREA</span><h2>Admin access</h2><p>Admin dashboard akan disambungkan dengan sistem login selamat pada fasa seterusnya.</p><button class="secondary-btn" id="adminInfo">Admin Login</button></section>
-    <section class="section small-info" id="settings"><span class="eyebrow">PERSONALIZE</span><h2>Website settings</h2><p>Warna, nama, banner dan kandungan website akan boleh diubah melalui Admin Dashboard.</p></section>
-  </main>
-
-  <footer><a class="brand" href="#"><span class="brand-mark">B</span><span>BEYZ</span><span class="verified">✓</span></a><span>© <span id="year"></span> BEYZ STORE. All rights reserved.</span></footer>
-
-  <dialog id="productDialog" class="modal">
-    <button class="modal-close" id="closeProduct">×</button>
-    <div id="productDetails"></div>
-  </dialog>
-  <dialog id="orderDialog" class="modal">
-    <button class="modal-close" id="closeOrder">×</button>
-    <span class="eyebrow">CHECKOUT</span><h2>Payment method</h2>
-    <p class="muted">Pilih kaedah pembayaran. Owner akan menyemak bayaran secara manual.</p>
-    <div class="payment-options">
-      <label><input type="radio" name="payment" value="Touch 'n Go" checked> Touch 'n Go</label>
-      <label><input type="radio" name="payment" value="Bank Transfer"> Bank Transfer</label>
-    </div>
-    <div class="qr-placeholder"><span>QR PAYMENT</span><small>QR owner akan dipaparkan di sini<br>selepas tetapan admin disediakan.</small></div>
-    <label class="field-label" for="buyerName">Nama pembeli</label><input id="buyerName" placeholder="Nama anda">
-    <label class="field-label" for="buyerContact">WhatsApp / nombor untuk dihubungi</label><input id="buyerContact" placeholder="Contoh: 60123456789">
-    <button class="primary-btn full" id="placeOrder">Hantar permintaan pesanan</button>
-    <p class="form-note">Ini prototaip paparan. Pesanan sebenar, muat naik resit dan notifikasi owner memerlukan sambungan backend.</p>
-  </dialog>
-
-  <div class="toast" id="toast" role="status"></div>
-  <script src="app.js"></script>
-</body>
-</html>
+<header class="topbar"><a class="brand" href="#home"><span class="brand-mark" id="brandMark">B</span><span id="brandName">BEYZ</span><span class="verified" id="verifiedMark">✓</span></a><button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button></header>
+<nav class="drawer" id="drawer"><button class="drawer-close" id="closeMenu">×</button><a href="#home">Home</a><a href="#catalog">Katalog</a><a href="#redeem">Redeem Code</a><a href="#leaderboard">Leaderboard</a><a href="#support">Support</a><a href="#owner">Owner &amp; Founder</a><a href="#admin">Admin Login</a></nav><div class="scrim" id="scrim"></div>
+<main id="storeView">
+<section class="hero" id="home"><div class="hero-copy"><span class="eyebrow" id="heroEyebrow">WELCOME TO BEYZ</span><h1 id="heroTitle">Your trusted<br><em>digital store.</em></h1><p id="heroDesc">Explore produk pilihan, pilih pakej dan buat pesanan dengan mudah.</p><a class="primary-btn" href="#catalog">Lihat katalog <span>→</span></a></div><div class="hero-art" id="heroBanner"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="hero-b" id="bannerLetter">B</div><span class="float-tag" id="bannerTag">BEYZ STORE</span></div></section>
+<section class="section" id="catalog"><div class="section-heading"><div><span class="eyebrow">PILIHAN UNTUK ANDA</span><h2>Our Catalog</h2></div><span class="muted small">Produk pilihan</span></div><div class="catalog-grid" id="catalogGrid"><p class="muted">Memuatkan katalog…</p></div></section>
+<section class="redeem-panel section" id="redeem"><div><span class="eyebrow">HADIAH EKSKLUSIF</span><h2>Have a redeem code?</h2><p>Masukkan kod yang diberikan oleh owner.</p></div><form id="redeemForm" class="redeem-form"><input id="redeemCode" placeholder="Masukkan redeem code" autocomplete="off" required><button class="primary-btn">Redeem</button></form><p class="form-note" id="redeemNote">Kod tertakluk pada syarat penggunaan.</p></section>
+<section class="section" id="leaderboard"><div class="section-heading"><div><span class="eyebrow">KOMUNITI BEYZ</span><h2>Top Supporters</h2></div></div><div class="leaderboard" id="leaderboardList"><div class="leader-row"><span class="rank">01</span><span class="leader-name">Belum ada pembeli</span></div></div></section>
+<section class="support section" id="support"><div><span class="eyebrow">KAMI SEDIA MEMBANTU</span><h2>Need help?</h2><p>Hubungi owner jika ada pertanyaan tentang produk atau pesanan.</p></div><div class="support-links"><a href="#" class="secondary-btn" id="waLink" target="_blank" rel="noopener">WhatsApp ↗</a><a href="#" class="secondary-btn" id="tgLink" target="_blank" rel="noopener">Telegram ↗</a></div></section>
+<section class="section small-info" id="owner"><span class="eyebrow">BEHIND BEYZ</span><h2>Owner &amp; Founder</h2><p id="ownerInfo">Founder: Belum ditetapkan<br>Owner: Belum ditetapkan</p></section>
+<section class="section small-info" id="admin"><span class="eyebrow">PRIVATE AREA</span><h2>Admin access</h2><p>Log masuk khas untuk Owner dan Admin BEYZ.</p><button class="secondary-btn" id="openLogin">Log masuk Admin</button></section>
+</main>
+<main id="adminView" class="admin-view hidden">
+  <section class="admin-head"><div><span class="eyebrow">PRIVATE CONTROL PANEL</span><h1>BEYZ Dashboard</h1><p id="adminWelcome">Selamat datang</p></div><button class="secondary-btn" id="logoutBtn">Log keluar</button></section>
+  <div class="stats-grid"><article class="stat"><span>Jumlah produk</span><strong id="statProducts">0</strong></article><article class="stat"><span>Pesanan</span><strong id="statOrders">0</strong></article><article class="stat"><span>Menunggu semakan</span><strong id="statPending">0</strong></article><article class="stat"><span>Redeem aktif</span><strong id="statRedeems">0</strong></article></div>
+  <div class="admin-tabs" id="adminTabs"><button class="tab active" data-tab="products">Katalog</button><button class="tab" data-tab="orders">Pesanan</button><button class="tab" data-tab="settings">Website</button><button class="tab" data-tab="payments">Bayaran</button><button class="tab" data-tab="redeems">Redeem</button><button class="tab owner-only" data-tab="admins">Admin</button></div>
+  <section class="admin-panel" id="panel-products"><div class="panel-title"><h2>Urus katalog</h2><button class="primary-btn" id="newProduct">+ Produk</button></div><div id="adminProducts" class="admin-list"></div><form id="productForm" class="editor hidden"><h3 id="productFormTitle">Tambah produk</h3><input type="hidden" id="productId"><label>Nama produk</label><input id="pName" required maxlength="80"><label>Description katalog</label><textarea id="pDesc" rows="3" required></textarea><label>URL gambar (https://)</label><input id="pImage" type="url" placeholder="https://..."><label>Huruf jika tiada gambar</label><input id="pSymbol" maxlength="3" value="B"><label>Pakej dan harga (satu setiap baris: Nama | Harga RM)</label><textarea id="pPrices" rows="4" placeholder="7 Hari | 5.00&#10;30 Hari | 15.00" required></textarea><div class="form-actions"><button class="primary-btn">Simpan produk</button><button type="button" class="secondary-btn" id="cancelProduct">Batal</button></div></form></section>
+  <section class="admin-panel hidden" id="panel-orders"><h2>Senarai pesanan</h2><div id="adminOrders" class="admin-list"></div></section>
+  <section class="admin-panel hidden" id="panel-settings"><h2>Identiti &amp; paparan website</h2><form id="settingsForm" class="editor"><label>Nama website</label><input id="sName" required><label>Description / ayat utama</label><textarea id="sDesc" rows="3"></textarea><label>Tagline banner</label><input id="sTag"><label>Huruf logo</label><input id="sLetter" maxlength="3"><label>URL banner GIF / gambar (https://)</label><input id="sBanner" type="url"><label>Warna utama (hex)</label><input id="sAccent" type="text" placeholder="#9b8cff"><label>Warna latar (hex)</label><input id="sBg" type="text" placeholder="#0b1020"><label>Founder</label><input id="sFounder"><label>Owner</label><input id="sOwner"><label>WhatsApp (contoh 60123456789)</label><input id="sWhatsApp"><label>Link Telegram</label><input id="sTelegram" type="url"><button class="primary-btn">Simpan tetapan</button></form></section>
+  <section class="admin-panel hidden" id="panel-payments"><h2>Tetapan pembayaran</h2><form id="paymentForm" class="editor"><label>Nama penerima</label><input id="payName"><label>Nama bank</label><input id="payBank"><label>Nombor akaun (jika pindahan bank)</label><input id="payAccount"><label>URL gambar QR Touch 'n Go</label><input id="payTngQr" type="url"><label>URL gambar QR bank</label><input id="payBankQr" type="url"><p class="form-note">Gunakan pautan gambar QR yang boleh dibuka umum. Jangan masukkan maklumat sulit selain butiran pembayaran yang memang mahu dipaparkan kepada pelanggan.</p><button class="primary-btn">Simpan pembayaran</button></form></section>
+  <section class="admin-panel hidden" id="panel-redeems"><div class="panel-title"><h2>Redeem code</h2></div><form id="redeemAdminForm" class="editor"><label>Kod</label><input id="rCode" required maxlength="40"><label>Hadiah / item</label><input id="rReward" required><label>Had penggunaan (0 = tanpa had)</label><input id="rLimit" type="number" min="0" value="1"><button class="primary-btn">Cipta kod</button></form><div id="adminRedeems" class="admin-list"></div></section>
+  <section class="admin-panel hidden" id="panel-admins"><h2>Urus Admin (Owner sahaja)</h2><form id="adminAddForm" class="editor"><label>UID Firebase pengguna yang hendak dijadikan Admin</label><input id="newAdminUid" required><p class="form-note">Pengguna mesti sudah daftar/log masuk sekurang-kurangnya sekali. UID boleh disalin daripada Firebase Authentication.</p><button class="primary-btn">Berikan akses Admin</button></form><div id="adminUsers" class="admin-list"></div></section>
+</main>
+<footer><a class="brand" href="#home"><span class="brand-mark">B</span><span id="footerName">BEYZ</span><span class="verified">✓</span></a><span>© <span id="year"></span> <span id="footerName2">BEYZ STORE</span>. All rights reserved.</span></footer>
+<dialog id="loginDialog" class="modal"><button class="modal-close" id="closeLogin">×</button><span class="eyebrow">BEYZ PRIVATE ACCESS</span><h2>Admin Login</h2><form id="loginForm"><label class="field-label">Email</label><input id="loginEmail" type="email" required autocomplete="username"><label class="field-label">Password</label><input id="loginPassword" type="password" required autocomplete="current-password"><button class="primary-btn full">Log masuk</button></form><p class="form-note">Akses hanya untuk akaun yang telah diberi peranan Owner atau Admin.</p></dialog>
+<dialog id="productDialog" class="modal"><button class="modal-close" id="closeProduct">×</button><div id="productDetails"></div></dialog>
+<dialog id="orderDialog" class="modal"><button class="modal-close" id="closeOrder">×</button><span class="eyebrow">CHECKOUT</span><h2>Maklumat pesanan</h2><p class="muted" id="orderSummary"></p><form id="orderForm"><label class="field-label">Nama pembeli</label><input id="buyerName" required><label class="field-label">WhatsApp / nombor untuk dihubungi</label><input id="buyerContact" required><label class="field-label">Kaedah bayaran</label><select id="paymentMethod"><option value="Touch 'n Go">Touch 'n Go</option><option value="Bank Transfer">Bank Transfer</option></select><div id="paymentInfo" class="payment-info"></div><label class="field-label">Link bukti pembayaran (optional)</label><input id="proofUrl" type="url" placeholder="Link gambar resit jika ada"><button class="primary-btn full">Hantar pesanan</button></form><p class="form-note">Penghantaran dibuat secara manual selepas Owner/Admin mengesahkan bayaran.</p></dialog>
+<div class="toast" id="toast" role="status"></div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script><script src="firebase-config.js"></script><script src="app.js"></script>
+</body></html>

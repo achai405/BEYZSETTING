@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function role() {
+      return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        ? get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role : 'guest';
+    }
+    function isAdmin() { return role() == 'admin' || role() == 'owner'; }
+    function isOwner() { return role() == 'owner'; }
+
+    match /public/{doc} {
+      allow read: if true;
+      allow write: if isAdmin() && doc == 'settings' || isAdmin() && doc == 'payments';
+    }
+    match /products/{productId} {
+      allow read: if resource.data.active == true || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+    match /orders/{orderId} {
+      allow create: if request.resource.data.keys().hasOnly(['productId','productName','packageLabel','amount','buyerName','contact','paymentMethod','proofUrl','status','createdAt'])
+        && request.resource.data.status == 'pending'
+        && request.resource.data.buyerName is string
+        && request.resource.data.contact is string
+        && request.resource.data.amount is number;
+      allow read: if isAdmin();
+      allow update: if isAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt','reviewedBy']);
+      allow delete: if isOwner();
+    }
+    match /redeems/{code} {
+      allow read: if isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+    match /redeemClaims/{claimId} {
+      allow create: if request.resource.data.keys().hasOnly(['code','buyerContact','createdAt','status'])
+        && request.resource.data.code is string
+        && request.resource.data.status == 'pending';
+      allow read, update, delete: if isAdmin();
+    }
+    match /admins/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isOwner());
+      allow create, update, delete: if isOwner();
+    }
+  }
+}
