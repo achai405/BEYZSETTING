@@ -4,10 +4,11 @@
   Jangan letak password, private key atau service-account key dalam fail ini.
 */
 window.BEYZ_FIREBASE_CONFIG = {
-  apiKey: "PASTE_API_KEY_HERE",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "PASTE_MESSAGING_SENDER_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyDEaxoQXOjitx0UPMVZZYE2io9WN2Hwz6w",
+  authDomain: "beyzsetting.firebaseapp.com",
+  projectId: "beyzsetting",
+  storageBucket: "beyzsetting.firebasestorage.app",
+  messagingSenderId: "1080858205160",
+  appId: "1:1080858205160:web:52b310b6f77e20118a625d",
+  measurementId: "G-26KGV3LVP2"
 };
