@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>BEYZ STORE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">B</span><span>BEYZ</span><span class="verified" title="Verified">✓</span></a>
+    <button class="icon-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+  </header>
+
+  <nav class="drawer" id="drawer">
+    <button class="drawer-close" id="closeMenu">×</button>
+    <a href="#home">Home</a><a href="#catalog">Catalog</a><a href="#redeem">Redeem Code</a>
+    <a href="#leaderboard">Leaderboard</a><a href="#support">Support</a>
+    <a href="#owner">Owner &amp; Founder</a><a href="#admin">Admin Login</a>
+    <a href="#settings">Website Settings</a>
+  </nav>
+  <div class="scrim" id="scrim"></div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">WELCOME TO BEYZ</span>
+        <h1>Your trusted<br><em>digital store.</em></h1>
+        <p>Explore produk pilihan, pilih pakej dan buat pesanan dengan mudah.</p>
+        <a class="primary-btn" href="#catalog">Lihat katalog <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-label="Banner BEYZ">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="hero-b">B</div><span class="float-tag">BEYZ STORE</span>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="section-heading"><div><span class="eyebrow">PILIHAN UNTUK ANDA</span><h2>Our Catalog</h2></div><span class="muted small">Produk pilihan</span></div>
+      <div class="catalog-grid" id="catalogGrid"></div>
+    </section>
+
+    <section class="redeem-panel section" id="redeem">
+      <div><span class="eyebrow">HADIAH EKSKLUSIF</span><h2>Have a redeem code?</h2><p>Masukkan kod yang diberikan oleh owner.</p></div>
+      <form id="redeemForm" class="redeem-form"><input id="redeemCode" placeholder="Masukkan redeem code" autocomplete="off"><button class="primary-btn">Redeem</button></form>
+      <p class="form-note" id="redeemNote">Sistem redeem akan diaktifkan selepas database disambungkan.</p>
+    </section>
+
+    <section class="section" id="leaderboard">
+      <div class="section-heading"><div><span class="eyebrow">KOMUNITI BEYZ</span><h2>Top Supporters</h2></div></div>
+      <div class="leaderboard"><div class="leader-row"><span class="rank">01</span><span class="avatar">B</span><span class="leader-name">Belum ada pembeli</span><span class="muted small">—</span></div></div>
+    </section>
+
+    <section class="support section" id="support">
+      <div><span class="eyebrow">KAMI SEDIA MEMBANTU</span><h2>Need help?</h2><p>Hubungi owner jika ada pertanyaan tentang produk atau pesanan.</p></div>
+      <div class="support-links"><a href="#" class="secondary-btn" id="waLink">WhatsApp ↗</a><a href="#" class="secondary-btn" id="tgLink">Telegram ↗</a></div>
+    </section>
+
+    <section class="section small-info" id="owner"><span class="eyebrow">BEHIND BEYZ</span><h2>Owner &amp; Founder</h2><p>Founder: <strong>Belum ditetapkan</strong><br>Owner: <strong>Belum ditetapkan</strong><br>Admin: <strong>Belum ditetapkan</strong></p></section>
+    <section class="section small-info" id="admin"><span class="eyebrow">PRIVATE AREA</span><h2>Admin access</h2><p>Admin dashboard akan disambungkan dengan sistem login selamat pada fasa seterusnya.</p><button class="secondary-btn" id="adminInfo">Admin Login</button></section>
+    <section class="section small-info" id="settings"><span class="eyebrow">PERSONALIZE</span><h2>Website settings</h2><p>Warna, nama, banner dan kandungan website akan boleh diubah melalui Admin Dashboard.</p></section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">B</span><span>BEYZ</span><span class="verified">✓</span></a><span>© <span id="year"></span> BEYZ STORE. All rights reserved.</span></footer>
+
+  <dialog id="productDialog" class="modal">
+    <button class="modal-close" id="closeProduct">×</button>
+    <div id="productDetails"></div>
+  </dialog>
+  <dialog id="orderDialog" class="modal">
+    <button class="modal-close" id="closeOrder">×</button>
+    <span class="eyebrow">CHECKOUT</span><h2>Payment method</h2>
+    <p class="muted">Pilih kaedah pembayaran. Owner akan menyemak bayaran secara manual.</p>
+    <div class="payment-options">
+      <label><input type="radio" name="payment" value="Touch 'n Go" checked> Touch 'n Go</label>
+      <label><input type="radio" name="payment" value="Bank Transfer"> Bank Transfer</label>
+    </div>
+    <div class="qr-placeholder"><span>QR PAYMENT</span><small>QR owner akan dipaparkan di sini<br>selepas tetapan admin disediakan.</small></div>
+    <label class="field-label" for="buyerName">Nama pembeli</label><input id="buyerName" placeholder="Nama anda">
+    <label class="field-label" for="buyerContact">WhatsApp / nombor untuk dihubungi</label><input id="buyerContact" placeholder="Contoh: 60123456789">
+    <button class="primary-btn full" id="placeOrder">Hantar permintaan pesanan</button>
+    <p class="form-note">Ini prototaip paparan. Pesanan sebenar, muat naik resit dan notifikasi owner memerlukan sambungan backend.</p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
